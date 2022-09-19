@@ -18,12 +18,22 @@
     
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <!-- jquery ul -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- fancybox js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
     <script>
         $(function(){
+            //a링크방지
+            $('.inner nav a').click(function(e){
+                e.preventDefault();
+            });
+            $('nav ul li a').click(function(e){
+                e.preventDefault(); //a링크 방지
+            });
             //영상편집 슬라이드
             var swiper = new Swiper(".mySwiper", {
                 pagination: {
@@ -45,6 +55,31 @@
                 $('.mySwiper').eq($(this).index()).addClass('on');
             });
 
+            //내부페이지이동
+            $('nav ul li').click(function(){
+               
+                var page = $('section').eq($(this).index());
+                var pageTop = page.offset().top;
+
+                $('html, body').animate({
+                    scrollTop : pageTop
+                }, 1000,'easeInOutCubic');
+            });
+
+            //header scroll
+            var hdTop = $('header').offset().top;
+            $(window).scroll(function(){
+                console.log(hdTop)
+                var windowTop = $(window).scrollTop();
+                if(hdTop < windowTop){
+                    $('header').addClass('on');
+                }
+                else{
+                    $('header').removeClass('on');
+                }
+            });
+            
+
         }); //jquery end
     </script>
 </head>
@@ -52,7 +87,7 @@
     <header>
         <div class="inner">
             <h1>
-                <a href="#">kwakchowon</a>
+                <a href="https://kwakchowon.github.io/html/">kwakchowon</a>
             </h1>
             <nav>
                 <ul>
@@ -64,13 +99,20 @@
             </nav>
         </div><!-- .inner end -->
     </header>
-    <section class="main_visual">
-        <img src="img/cont03_1.jpg" alt="샘플"/>
+    <div class="main_visual">
+        <img src="img/small-water-drops-blue-backdrop.jpg" alt="샘플"/>
+        <!-- <div><span></span></div> -->
         <div class="inner">
-            <p>motion graphic designer</p>
-            <h2>kwak cho won Designer</h2>
+            <div><span></span></div>
+            <ul>
+                <p>motion graphic designer</p>
+                <h2>kwak <br>cho won</h2>
+                <li>
+                    <a href="https://www.youtube.com/channel/UC1aSXs7Y3Aghejm1z7I3r8A" target="_blank">유튜브채널이동</a>
+                </li>
+            </ul>
         </div><!-- .inner end -->
-    </section><!-- .main_visual end -->
+    </div><!-- .main_visual end -->
 
     <section class="cont01" id="c1">
         <div class="inner">
@@ -421,12 +463,20 @@
     <footer>
         <ul>
             <li>
-                <a href="#">유튜브채널 이동</a>
+                <a href="https://www.youtube.com/channel/UC1aSXs7Y3Aghejm1z7I3r8A" target="_blank">유튜브채널 이동</a>
             </li>
             <li>
                 <a href="#">지원서 다운로드</a>
             </li>
             <!-- 사용된 출저는 html, css에 주석으로 남기기 -->
+        </ul>
+        <ul>
+            <li>
+                <a href="#">이메일</a>
+            </li>
+            <li>
+                <a href="tel:010-3943-0072" target="_blank">연락처</a>
+            </li>
         </ul>
         <p> COPYRIGHT 2022. 디자이너 곽초원. ALL RIGHTS RESERVED.</p>
             <p> 본 사이트는 개인 포트폴리오 사이트로 제작되어 상업적 목적이 아닙니다.</br>
