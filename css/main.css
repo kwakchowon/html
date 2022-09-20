@@ -500,12 +500,13 @@ header .inner nav ul li a{
     transition: 0.5s;
 }
 .cont04 .list a .info{ 
-    background-color: #F24405;
-    color: #fff;
+    background-color: #FFF;
+    color: #2C3D73;
     padding: 20px 10px;
     width: 273px;
     height: 100px;
     position: absolute;
+    border-top: 1px solid #2C3D73;
     
 }
 .cont04 .list a .info h4{ 
