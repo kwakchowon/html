@@ -511,6 +511,7 @@ header .inner nav ul li a{
 .cont04 .list a .info h4{ 
     font-size: 20px;
     margin-bottom: 7px;
+    letter-spacing: 1px;
 }
 .cont04 .list a .info p{ }
 
