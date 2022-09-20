@@ -532,8 +532,9 @@ header .inner nav ul li a{
   align-items: center;
 }
 .cont05 .inner .info .info_img{
-  width: 400px;
+  width: 300px;
   height: 400px;
+  margin-bottom: 110px;
 }
 .cont05 .inner .info .info_img img{
   width: 100%;
@@ -543,7 +544,7 @@ header .inner nav ul li a{
 
 .cont05 .inner .info .text{
   width: 1000px;
-  padding-left: 100px;
+  padding-left: 0px;
 }
 .cont05 .inner .info .text ul{
   display: flex;
